@@ -5,7 +5,7 @@ import Navbar from './components/Navbar'
 import Article from './components/Article'
 import Articles from './components/Articles'
 import FavouriteArticles from './components/FavouriteArticles'
-import "./index.css"
+import "./index.module.css"
 
 const App = () => {
 	return (
