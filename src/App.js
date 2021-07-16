@@ -2,9 +2,9 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom"
 
 import Navbar from './components/Navbar'
-import Article from './components/Article'
-import Articles from './components/Articles'
-import FavouriteArticles from './components/FavouriteArticles'
+import ArticlePage from './components/ArticlePage'
+import ArticlesPage from './components/ArticlesPage'
+import FavouriteArticlesPage from './components/FavouriteArticlesPage'
 import "./index.module.css"
 
 const App = () => {
@@ -12,9 +12,9 @@ const App = () => {
 		<Router>
 			<Navbar />
       <Switch>
-        <Route path="/articles" component={Articles} />
-				<Route path="/favourite" component={FavouriteArticles} />
-				<Route exact path="/articles/:id" component={Article} />
+        <Route path="/articles" component={ArticlesPage} />
+				<Route path="/favourite" component={FavouriteArticlesPage} />
+				<Route exact path="/articles/:id" component={ArticlePage} />
         <Route path="/"><Redirect to="/articles" /></Route>
       </Switch>
     </Router>
