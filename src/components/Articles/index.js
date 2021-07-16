@@ -8,29 +8,29 @@ import styles from "./articles.module.css"
 
 const Articles = () => {
 
-	const [articles, setArticles] = useState({})
+	const [allArticles, setAllArticles] = useState([])
+	const [page, setPage] = useState(0)
 
 	useEffect(() => {
-		let isMounted = true;
+		let isMounted = true
 		const fetchData = async () => {
 			try {
-				const data = await fetchArticles()
+				const data = await fetchArticles(page)
 				if (isMounted) {
-					setArticles(data)
+					setAllArticles(data)
 				}
-				console.log(data.slice(0,10))
 			} catch(error) {
 				console.log(`Couldnt fetch the posts! Error message:${error}`)
 			}
 		}
 		fetchData()
 		return () => { isMounted = false }
-	}, [])
+	}, [allArticles])
 
 	return (
 		<div className={styles.articles}>
 			<ArticlesMain styles={styles} />
-			<ArticlesShowcase styles={styles} data={articles}/>
+			<ArticlesShowcase styles={styles} articles={allArticles}/>
 		</div>
 	)
 }
