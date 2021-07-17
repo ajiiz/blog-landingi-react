@@ -1,18 +1,20 @@
 import React from 'react'
 
-const ArticlesShowcase = ({ styles, articles }) => {
+import styles from "./articles.module.css"
+
+const ArticlesShowcase = ({ articles }) => {
 	return (
-		<>
+		<div className={styles.articles__showcase}>
 			{
 				articles.map((data, key) => {
 					return (
-						<div className={styles.article} key={key}>
+						<div className={styles.showcase__article} key={key}>
 							<p>{data.title}</p>
 						</div>
 					)
 				})
 			}
-		</>
+		</div>
 	)
 }
 

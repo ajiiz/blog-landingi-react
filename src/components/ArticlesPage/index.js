@@ -29,8 +29,8 @@ const ArticlesPage = () => {
 
 	return (
 		<div className={styles.articles}>
-			<ArticlesMain styles={styles} />
-			<ArticlesShowcase styles={styles} articles={allArticles}/>
+			<ArticlesMain />
+			<ArticlesShowcase articles={allArticles}/>
 		</div>
 	)
 }

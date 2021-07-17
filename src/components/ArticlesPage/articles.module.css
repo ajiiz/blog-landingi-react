@@ -3,25 +3,25 @@
 	height: fit-content;
 }
 
-.container {
+.articles__container {
 	padding: 5em 0em 3em 8em;
 }
 
-.header {
+.articles__header {
 	width: 100%;
 	font-size: 4em;
 }
 
-.info {
+.articles__info {
 	white-space: pre;
 	color: #4d4d4d;
 }
 
-.info span, .text span {
+.articles__info span, .content__text span {
 	display: block;
 }
 
-.mainarticle {
+.articles__mainarticle {
 	width: 87%;
 	height: 50vh;
 	display: flex;
@@ -31,13 +31,13 @@
 	background-color: #FFF;
 }
 
-.photo {
+.mainarticle__photo {
 	width: 60%;
 	height: 100%;
 	object-fit: cover;
 }
 
-.content {
+.mainarticle__content {
 	width: 40%;
 	height: 100%;
 	display: flex;
@@ -46,61 +46,61 @@
 	align-items: center;
 }
 
-.title {
+.content__title {
 	margin-bottom: 1em;
 	font-size: 2.5em;
 	text-align: center;
 }
 
-.title span {
+.content__title span {
 	color: rgb(255, 187, 61);
 }
 
-.text {
+.content__text {
 	white-space: pre-wrap;
 	color: #585858;
 }
 
-.text span:nth-child(2) {
+.content__text span:nth-child(2) {
 	color: rgb(74, 130, 250);
 }
 
-.text span:nth-child(3) {
+.content__text span:nth-child(3) {
 	color: rgb(252, 195, 90)
 }
 
 @media screen and (max-width: 1500px) {
-	.photo {
+	.mainarticle__photo {
 		width: 50%;
 	}
-	.content {
+	.mainarticle__content {
 		width: 50%;
 	}
 }
 
 @media screen and (max-width: 1200px) {
-	.mainarticle {
+	.articles__mainarticle {
 		width: 80%;
 		height: 80vh;
 		flex-direction: column-reverse;
 	}
-	.photo {
+	.mainarticle__photo {
 		width: 100%;
 		height: 50%;
 	}
-	.content {
+	.mainarticle__content {
 		width: 100%;
 		height: 50%;
 	}
 }
 
 @media screen and (max-width: 768px) {
-	.container {
+	.articles__container {
 		width: 80%;
 		margin: auto;
 		padding: 3em 0 3em 0;
 	}
-	.mainarticle {
+	.articles__mainarticle {
 		width: 90%;
 		margin: auto;
 		font-size: .9em;
@@ -108,15 +108,15 @@
 }
 
 @media screen and (max-width: 400px) {
-	.container {
+	.articles__container {
 		font-size: 15px
 	}
-	.mainarticle {
+	.articles__mainarticle {
 		width: 90%;
 		margin: auto;
 		font-size: 14px;
 	}
-	.title {
+	.content__title {
 		margin-bottom: .3em;
 	}
 }
