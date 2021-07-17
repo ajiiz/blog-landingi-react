@@ -1,0 +1,57 @@
+.article {
+	min-height: 83.6vh;
+	display: flex;
+	flex-direction: column;
+	padding-top: 2em;
+}
+
+.article__content {
+	width: 60%;
+	min-height: 10vh;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+}
+
+.article__title {
+	width: 80%;
+	font-size: 2em;
+	text-align: left;
+	text-transform: capitalize;
+	margin-bottom: 1em;
+}
+
+.article__text {
+	width: 80%;
+	text-align: left;
+	text-transform: capitalize;
+	margin-bottom: 2em;
+}
+
+.article__author {
+	width: 80%;
+	font-size: .8em;
+	color: rgb(109, 109, 109);
+}
+
+.article__author span {
+	display: block;
+	text-align: left;
+	padding: .1em 0;
+}
+
+@media screen and (max-width: 500px) {
+	.article {
+			height: 80vh;
+	}
+	.article__title {
+		width: 90%;
+		font-size: 1.7em;
+	}
+	.article__text {
+		width: 90%;
+	}
+	.article__author {
+		width: 90%;
+	}
+}
