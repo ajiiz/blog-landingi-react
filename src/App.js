@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import ArticlePage from './components/ArticlePage'
 import ArticlesPage from './components/ArticlesPage'
 import FavouriteArticlesPage from './components/FavouriteArticlesPage'
+import Footer from './components/Footer'
 import "./index.module.css"
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
 				<Route path="/article_:id" component={ArticlePage} />
 				<Route path="/"><Redirect to="/articles" /></Route>
 			</Switch>
+			<Footer />
     </Router>
 	)
 }
