@@ -4,7 +4,7 @@ import { fetchArticle } from "../services/articles"
 import { fetchUser } from "../services/users"
 import { fetchComments } from "../services/comments"
 
-import styles from "./article.module.css"
+import ArticleContent from "./ArticleContent"
 
 const ArticlePage = () => {
 
@@ -37,12 +37,12 @@ const ArticlePage = () => {
 	}, [])
 
 	return (
-		<div className={styles.article}>
+		<>
 			{
-				article.length > 0 &&
-					<p>{article.body}</p>
+				article &&
+					<ArticleContent article={article} user={user} comments={comments}/>
 			}
-		</div>
+		</>
 	)
 }
 
