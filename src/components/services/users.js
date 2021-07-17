@@ -5,6 +5,6 @@ export const fetchUser = async (userId) => {
         let user = data.filter((elem) => elem.id === userId)
         return user
     } catch (error) {
-        throw Error(`Couldnt fetch the posts! Error message:${error}`)
+        throw Error(`Couldnt fetch the user! Error message:${error}`)
     }
 }

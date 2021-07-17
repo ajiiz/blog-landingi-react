@@ -18,6 +18,6 @@ export const fetchArticle = async (articleId) => {
         let article = data.filter((elem) => elem.id === articleId)
         return article
     } catch (error) {
-        throw Error(`Couldnt fetch the posts! Error message:${error}`)
+        throw Error(`Couldnt fetch the post! Error message:${error}`)
     }
 }
