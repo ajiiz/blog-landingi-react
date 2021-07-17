@@ -73,6 +73,12 @@
 
 /* Articles Showcase Section */
 
+.articles__latest {
+	width: 100%;
+	font-size: 2em;
+	margin: 0 0 2em 4em;
+}
+
 .articles__showcase {
 	width: 87%;
 	display: flex;
@@ -193,12 +199,17 @@
 		margin: auto;
 		font-size: .9em;
 	}
+	.articles__latest {
+		width: 80%;
+		margin: 1.5em auto;
+	}
 	.articles__showcase {
 		width: 90%;
 		margin: auto;
 	}
 	.showcase__article {
 		width: 100%;
+		height: 30vh;
 	}
 }
 
@@ -213,5 +224,8 @@
 	}
 	.content__title {
 		margin-bottom: .3em;
+	}
+	.articles__lates {
+		font-size: 15px;
 	}
 }
