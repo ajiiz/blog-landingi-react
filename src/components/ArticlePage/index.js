@@ -19,7 +19,7 @@ const ArticlePage = () => {
 			try {
 				const article = await fetchArticle(id)
 				const comments = await fetchComments(id)
-				const user = await fetchUser(id)
+				const user = await fetchUser(article.userId)
 				if (isMounted) {
 					//console.log(article)
 					//console.log(comments)
@@ -29,7 +29,7 @@ const ArticlePage = () => {
 					setUser(user)
 				}
 			} catch(error) {
-				console.log(`Couldnt fetch the posts! Error message:${error}`)
+				console.log(`Couldnt fetch the data in ArticlePage! Error message:${error}`)
 			}
 		}
 		fetchData()
@@ -39,7 +39,7 @@ const ArticlePage = () => {
 	return (
 		<>
 			{
-				article &&
+				user &&
 					<ArticleContent article={article} user={user} comments={comments}/>
 			}
 		</>
