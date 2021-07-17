@@ -11,6 +11,7 @@ const ArticlesPage = () => {
 
 	const [allArticles, setAllArticles] = useState([])
 	const [page, setPage] = useState(0)
+	const [lastPage, setLastPage] = useState(false)
 
 	useEffect(() => {
 		let isMounted = true
@@ -18,6 +19,7 @@ const ArticlesPage = () => {
 			try {
 				const data = await fetchArticles(page)
 				if (isMounted) {
+					data.length < 8 ? setLastPage(true) : setLastPage(false)
 					setAllArticles(data)
 				}
 			} catch(error) {
@@ -26,13 +28,21 @@ const ArticlesPage = () => {
 		}
 		fetchData()
 		return () => { isMounted = false }
-	}, [allArticles])
+	}, [page])
+
+	const handlePage = (op) => {
+		if (op === "inc" && !lastPage) {
+			setPage(page + 1)
+		} else if (op == "dec" && page - 1 >= 0) {
+			setPage(page - 1)
+		}
+	}
 
 	return (
 		<div className={styles.articles}>
 			<ArticlesMain />
 			<ArticlesShowcase articles={allArticles}/>
-			<ArticlesButtons />
+			<ArticlesButtons handlePage={handlePage} />
 		</div>
 	)
 }
