@@ -4,6 +4,7 @@ import { fetchArticles } from '../services/articles'
 
 import ArticlesShowcase from './ArticlesShowcase'
 import ArticlesMain from './ArticlesMain'
+import ArticlesButtons from './ArticlesButtons'
 import styles from "./articles.module.css"
 
 const ArticlesPage = () => {
@@ -31,6 +32,7 @@ const ArticlesPage = () => {
 		<div className={styles.articles}>
 			<ArticlesMain />
 			<ArticlesShowcase articles={allArticles}/>
+			<ArticlesButtons />
 		</div>
 	)
 }
