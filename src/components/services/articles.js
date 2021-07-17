@@ -1,8 +1,11 @@
-export const fetchArticles = async () => {
+export const fetchArticles = async (page) => {
     try {
         const response = await fetch("https://jsonplaceholder.typicode.com/posts")
         const data = await response.json()
-        return data
+        let start = page * 8
+        let end = start + 8
+        let filteredData = data.filter((elem) => elem.id > start && elem.id <= end)
+        return filteredData
     } catch (error) {
         throw Error(`Couldnt fetch the posts! Error message:${error}`)
     }

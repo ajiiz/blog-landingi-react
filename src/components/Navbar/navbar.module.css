@@ -5,36 +5,36 @@
 	align-items: center;
 }
 
-.header {
+.navbar__header {
 	padding: 0 3em;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	pointer-events: none;
 }
 
-.list {
+.navbar__list {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.item {
+.list__item {
 	padding: 0 1em;
 	text-transform: capitalize;
 }
 
-.link {
+.list__link {
 	color: inherit;
 	transition: color .1s ease-in;
 }
 
-.link:hover {
+.list__link:hover {
 	color: #2600ff;
 	border-bottom: 1px solid #2600ff;
 	padding-bottom: .6em;
 }
 
-.link:focus {
+.list__link:focus {
 	color: #9900ff;
 }
 
@@ -43,7 +43,7 @@
 		height: 12vh;
 	}
 
-	.header {
-		padding: 0 1em;
+	.navbar__header {
+		padding: 0 .5em;
 	}
 }
