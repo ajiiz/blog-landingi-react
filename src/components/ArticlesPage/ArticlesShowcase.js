@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Article from "./Article"
 import styles from "./articles.module.css"
 
 const ArticlesShowcase = ({ articles }) => {
@@ -8,9 +9,7 @@ const ArticlesShowcase = ({ articles }) => {
 			{
 				articles.map((data, key) => {
 					return (
-						<div className={styles.showcase__article} key={key}>
-							<p>{data.title}</p>
-						</div>
+						<Article title={data.title} body={data.body} key={key} id={data.id}/>
 					)
 				})
 			}
