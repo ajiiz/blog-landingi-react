@@ -122,6 +122,10 @@
 	border-bottom: 1px solid #2600ff;
 }
 
+.article__link:focus {
+	border-bottom: 1px solid #9900ff;
+}
+
 /* Articles Buttons */
 
 .articles__buttons {
@@ -135,18 +139,18 @@
 .articles__button {
 	display: flex;
 	align-items: center;
-	font-size: 1.2em;
+	font-size: .9em;
 	text-transform: uppercase;
 	margin: 1em 0 1em 0;
 }
 
 .articles__button:hover {
-	font-size: 1.2em;
+	font-size: .9em;
 	color: #2600ff;
 }
 
 .articles__button:focus {
-	font-size: 1.2em;
+	font-size: .9em;
 	color: #9900ff;
 }
 
@@ -210,6 +214,9 @@
 	.showcase__article {
 		width: 100%;
 		height: 30vh;
+	}
+	.articles__buttons {
+		padding: 0;
 	}
 }
 
