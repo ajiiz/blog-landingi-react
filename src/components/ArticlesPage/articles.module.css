@@ -220,6 +220,15 @@
 	}
 }
 
+@media screen and (max-width: 500px) {
+	.mainarticle__photo {
+		height: 35%;
+	}
+	.mainarticle__content {
+		height: 65%;
+	}
+}
+
 @media screen and (max-width: 400px) {
 	.articles__container {
 		font-size: 15px
@@ -232,7 +241,7 @@
 	.content__title {
 		margin-bottom: .3em;
 	}
-	.articles__lates {
+	.articles__latest {
 		font-size: 15px;
 	}
 }
