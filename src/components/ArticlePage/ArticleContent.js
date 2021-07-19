@@ -4,9 +4,8 @@ import styles from "./article.module.css"
 import stylesMainArticle from "../ArticlesPage/articles.module.css"
 import photo from "../../assets/article-photo.jpg"
 
-const ArticleContent = ({ article, user, comments }) => {
+const ArticleContent = ({ article, user }) => {
 	return (
-		<div className={styles.article}>
 			<div className={stylesMainArticle.articles__mainarticle}>
 				<img src={photo} className={stylesMainArticle.mainarticle__photo} />
 				<div className={stylesMainArticle.mainarticle__content}>
@@ -21,10 +20,6 @@ const ArticleContent = ({ article, user, comments }) => {
 					</p>
 				</div>
 			</div>
-				<div className={styles.article__comments}>
-
-				</div>
-		</div>
 	)
 }
 
