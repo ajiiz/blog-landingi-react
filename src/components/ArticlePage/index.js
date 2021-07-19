@@ -5,6 +5,7 @@ import { fetchUser } from "../services/users"
 import { fetchComments } from "../services/comments"
 
 import ArticleContent from "./ArticleContent"
+import ArticleComments from "./ArticleComments"
 
 const ArticlePage = () => {
 
@@ -22,7 +23,7 @@ const ArticlePage = () => {
 				const user = await fetchUser(article.userId)
 				if (isMounted) {
 					//console.log(article)
-					//console.log(comments)
+					console.log(comments)
 					//console.log(user)
 					setArticle(article)
 					setComments(comments)
@@ -39,8 +40,12 @@ const ArticlePage = () => {
 	return (
 		<>
 			{
-				user &&
-					<ArticleContent article={article} user={user} comments={comments}/>
+				(user && comments && article) ?
+					<>
+						<ArticleContent article={article} user={user}/>
+						<ArticleComments comments={comments} />
+					</>
+				: null
 			}
 		</>
 	)
