@@ -1,9 +1,9 @@
-const articlesReducer =  (articles = [], action) => {
+const articlesReducer =  (article = {}, action) => {
     switch (action.type) {
-        case "FETCH_ALL":
+        case "FETCH_BY_ID":
             return action.payload
         default:
-            return articles
+            return article
     }
 }
 
