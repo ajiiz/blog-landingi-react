@@ -26,3 +26,12 @@ export const removeFavourite = (articleId) => async (dispatch) => {
         console.log(error.message)
     }
 }
+
+export const getFavouriteArticles = () => async (dispatch) => {
+    try {
+        const data = await api.fetchFavouriteArticles()
+        dispatch({ type: "FETCH_ALL_ARTICLES", payload: data })
+    } catch (error) {
+        console.log(error.message)
+    }
+}
