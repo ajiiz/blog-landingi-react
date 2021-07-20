@@ -11,7 +11,6 @@ export const fetchArticles = async (page) => {
     }
 }
 
-
 export const fetchArticle = async (articleId) => {
     try {
         const response = await fetch("https://jsonplaceholder.typicode.com/posts")
@@ -20,5 +19,27 @@ export const fetchArticle = async (articleId) => {
         return article[0]
     } catch (error) {
         throw Error(`Couldnt fetch the post! Error message:${error}`)
+    }
+}
+
+export const fetchComments = async (articleId) => {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/comments")
+        const data = await response.json()
+        let comments = data.filter((elem) => elem.postId == articleId)
+        return comments
+    } catch (error) {
+        throw Error(`Couldnt fetch the comments! Error message:${error}`)
+    }
+}
+
+export const fetchUser = async (userId) => {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/users")
+        let data = await response.json()
+        data = data.filter((elem) => elem.id == userId)
+        return data[0]
+    } catch (error) {
+        throw Error(`Couldnt fetch the user! Error message:${error}`)
     }
 }
