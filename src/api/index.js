@@ -43,3 +43,44 @@ export const fetchUser = async (userId) => {
         throw Error(`Couldnt fetch the user! Error message:${error}`)
     }
 }
+
+export const fetchFavourites = async () => {
+    try {
+        const favourites = localStorage.getItem("favourites").split(",")
+        return favourites
+    } catch (error) {
+        throw Error(`Couldnt add to favourites! Error message:${error}`)
+    }
+}
+
+export const addFavorite = async (articleId) => {
+    try {
+        if (localStorage.getItem("favourites")) {
+            let favourites = localStorage.getItem("favourites").split(",")
+            favourites.push(articleId)
+            localStorage.removeItem("favourites")
+            localStorage.setItem("favourites", favourites)
+            return favourites
+        }
+        else {
+            let favourites = []
+            favourites.push(articleId)
+            localStorage.setItem("favourites", favourites)
+            return favourites
+        }
+    } catch (error) {
+        throw Error(`Couldnt add to favourites! Error message:${error}`)
+    }
+}
+
+export const removeFavourite = async (articleId) => {
+    try {
+        let favourites = localStorage.getItem("favourites").split(",")
+        favourites = favourites.filter((id) => id != articleId)
+        localStorage.removeItem("favourites")
+        localStorage.setItem("favourites", favourites)
+        return favourites
+    } catch (error) {
+        throw Error(`Couldnt remove from favourites! Error message:${error}`)
+    }
+}
