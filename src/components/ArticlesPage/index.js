@@ -43,7 +43,7 @@ const ArticlesPage = () => {
 	return (
 		<div className={styles.articles}>
 			<ArticlesMain />
-			<ArticlesShowcase articles={articles}/>
+			<ArticlesShowcase articles={articles} title={"Latest"} />
 			<ArticlesButtons handlePage={handlePage} />
 		</div>
 	)
