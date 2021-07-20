@@ -22,7 +22,6 @@ const ArticlesPage = () => {
 
 	useEffect(() => {
 		articles.length < 8 ? setLastPage(true) : setLastPage(false)
-		console.log(articles.length)
 	}, [articles])
 
 	useEffect(() => {
