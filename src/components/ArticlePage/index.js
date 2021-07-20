@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from "react-router-dom"
-import { fetchArticle } from "../services/articles"
-import { fetchUser } from "../services/users"
-import { fetchComments } from "../services/comments"
+import { useDispatch } from "react-redux"
+import { getArticle } from "../../actions/article"
+import { getComments } from "../../actions/comments"
+import { getUser } from "../../actions/user"
+import { useSelector } from "react-redux"
 
 import ArticleContent from "./ArticleContent"
 import ArticleComments from "./ArticleComments"
@@ -10,30 +12,20 @@ import styles from "./article.module.css"
 
 const ArticlePage = () => {
 
+	const dispatch = useDispatch()
 	const { id } = useParams()
-	const [article, setArticle] = useState({})
-	const [comments, setComments] = useState([])
-	const [user, setUser] = useState({})
+	const article = useSelector((state) => state.article)
+	const comments = useSelector((state) => state.comments)
+	const user = useSelector((state) => state.user)
 
-	useEffect(() => {
-		let isMounted = true
-		const fetchData = async () => {
-			try {
-				const article = await fetchArticle(id)
-				const comments = await fetchComments(id)
-				const user = await fetchUser(article.userId)
-				if (isMounted) {
-					setArticle(article)
-					setComments(comments)
-					setUser(user)
-				}
-			} catch(error) {
-				console.log(`Couldnt fetch the data in ArticlePage! Error message:${error}`)
-			}
-		}
-		fetchData()
-		return () => { isMounted = false }
-	}, [])
+    useEffect(() => {
+        dispatch(getArticle(id))
+				dispatch(getComments(id))
+    }, [dispatch])
+
+		useEffect(() => {
+			dispatch(getUser(article.userId))
+		}, [article])
 
 	return (
 		<>
