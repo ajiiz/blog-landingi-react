@@ -4,6 +4,7 @@ import { getFavouriteArticles } from "../../actions/favourites"
 import { useSelector } from "react-redux"
 import ArticleShowcase from "../ArticlesPage/ArticlesShowcase"
 
+import styles from "./favourite.module.css"
 
 const FavouriteArticlesPage = () => {
 
@@ -20,11 +21,11 @@ const FavouriteArticlesPage = () => {
 	}, [dispatch])
 
 	return (
-		<div className={}>
+		<div className={styles.favourite}>
 			{
 				favouriteArticles.length > 0 ?
 					<ArticleShowcase articles={favouriteArticles} title={"Favourite"} />
-				:	<span>You dont have any favourite articles</span>
+				:	<p className={styles.favourite__missing}>You dont have any favourite articles</p>
 			}
 		</div>
 		)
