@@ -1,6 +1,6 @@
 const favouritesReducer =  (favourites = [], action) => {
     switch (action.type) {
-        case "FETCH_ALL":
+        case "FETCH_ALL_IDS":
             return action.payload
         case "ADD":
             return action.payload

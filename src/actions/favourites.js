@@ -1,9 +1,9 @@
 import * as api from "../api"
 
-export const getFavourites = () => async (dispatch) => {
+export const getFavouritesIds = () => async (dispatch) => {
     try {
-        const data = await api.fetchFavourites()
-        dispatch({ type: "FETCH_ALL", payload: data })
+        const data = await api.fetchFavouriteIds()
+        dispatch({ type: "FETCH_ALL_IDS", payload: data })
     } catch (error) {
         console.log(error.message)
     }

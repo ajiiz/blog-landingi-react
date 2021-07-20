@@ -44,7 +44,7 @@ export const fetchUser = async (userId) => {
     }
 }
 
-export const fetchFavourites = async () => {
+export const fetchFavouriteIds = async () => {
     try {
         const favourites = localStorage.getItem("favourites").split(",")
         return favourites

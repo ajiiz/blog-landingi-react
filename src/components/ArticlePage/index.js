@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux"
 import { getArticle } from "../../actions/article"
 import { getComments } from "../../actions/comments"
 import { getUser } from "../../actions/user"
-import { getFavourites, addFavourite, removeFavourite } from '../../actions/favourites'
+import { getFavouritesIds, addFavourite, removeFavourite } from '../../actions/favourites'
 import { useSelector } from "react-redux"
 
 import ArticleContent from "./ArticleContent"
@@ -26,7 +26,7 @@ const ArticlePage = () => {
 	}, [])
 
 	useEffect(() => {
-		dispatch(getFavourites())
+		dispatch(getFavouritesIds())
 		dispatch(getArticle(id))
 		dispatch(getComments(id))
 	}, [dispatch])
