@@ -4,11 +4,11 @@ import React from 'react'
 import Article from "./Article"
 import styles from "./articles.module.css"
 
-const ArticlesShowcase = ({ articles }) => {
+const ArticlesShowcase = ({ articles, title }) => {
 
 	return (
 		<>
-			<h3 className={styles.articles__latest}>Latest articles</h3>
+			<h3 className={styles.articles__latest}>{title} articles</h3>
 			<div className={styles.articles__showcase}>
 
 				{

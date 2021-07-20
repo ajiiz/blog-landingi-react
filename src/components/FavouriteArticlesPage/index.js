@@ -4,6 +4,7 @@ import { getFavouriteArticles } from "../../actions/favourites"
 import { useSelector } from "react-redux"
 import ArticleShowcase from "../ArticlesPage/ArticlesShowcase"
 
+
 const FavouriteArticlesPage = () => {
 
 	const favouriteArticles = useSelector((state) => state.favourites)
@@ -19,13 +20,13 @@ const FavouriteArticlesPage = () => {
 	}, [dispatch])
 
 	return (
-		<>
+		<div className={}>
 			{
 				favouriteArticles.length > 0 ?
-					<ArticleShowcase articles={favouriteArticles} />
-				:	<h3>You dont have any favourites</h3>
+					<ArticleShowcase articles={favouriteArticles} title={"Favourite"} />
+				:	<span>You dont have any favourite articles</span>
 			}
-		</>
+		</div>
 		)
 }
 
