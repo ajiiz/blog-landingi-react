@@ -78,9 +78,26 @@ export const removeFavourite = async (articleId) => {
         let favourites = localStorage.getItem("favourites").split(",")
         favourites = favourites.filter((id) => id != articleId)
         localStorage.removeItem("favourites")
-        localStorage.setItem("favourites", favourites)
+        if (favourites.length > 0) {
+            localStorage.setItem("favourites", favourites)
+        }
         return favourites
     } catch (error) {
         throw Error(`Couldnt remove from favourites! Error message:${error}`)
+    }
+}
+
+export const fetchFavouriteArticles = async () => {
+    try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/posts")
+        let data = await response.json()
+        const favouriteIds = localStorage.getItem("favourites").split(",")
+        let favourites = []
+        for (let i = 0; i <= favouriteIds.length - 1; i++) {
+            favourites.push(data.filter((elem) => elem.id == favouriteIds[i])[0])
+        }
+        return favourites
+    } catch (error) {
+        throw Error(`Couldnt fetch favourites! Error message:${error}`)
     }
 }
