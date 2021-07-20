@@ -1,9 +1,11 @@
 import React from 'react'
 
+
 import Article from "./Article"
 import styles from "./articles.module.css"
 
 const ArticlesShowcase = ({ articles }) => {
+
 	return (
 		<>
 			<h3 className={styles.articles__latest}>Latest articles</h3>

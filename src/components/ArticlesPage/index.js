@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-
-import { fetchArticles } from '../services/articles'
+import { useDispatch } from "react-redux"
+import { getArticles } from "../../actions/articles"
+import { useSelector } from "react-redux"
 
 import ArticlesShowcase from './ArticlesShowcase'
 import ArticlesMain from './ArticlesMain'
@@ -9,25 +10,23 @@ import styles from "./articles.module.css"
 
 const ArticlesPage = () => {
 
-	const [allArticles, setAllArticles] = useState([])
 	const [page, setPage] = useState(0)
 	const [lastPage, setLastPage] = useState(false)
+	const articles = useSelector((state) => state.articles)
+
+	const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(getArticles(page))
+    }, [dispatch])
 
 	useEffect(() => {
-		let isMounted = true
-		const fetchData = async () => {
-			try {
-				const data = await fetchArticles(page)
-				if (isMounted) {
-					data.length < 8 ? setLastPage(true) : setLastPage(false)
-					setAllArticles(data)
-				}
-			} catch(error) {
-				console.log(`Couldnt fetch the posts! Error message:${error}`)
-			}
-		}
-		fetchData()
-		return () => { isMounted = false }
+		articles.length < 8 ? setLastPage(true) : setLastPage(false)
+		console.log(articles.length)
+	}, [articles])
+
+	useEffect(() => {
+		dispatch(getArticles(page))
 	}, [page])
 
 	const handlePage = (op) => {
@@ -41,7 +40,7 @@ const ArticlesPage = () => {
 	return (
 		<div className={styles.articles}>
 			<ArticlesMain />
-			<ArticlesShowcase articles={allArticles}/>
+			<ArticlesShowcase articles={articles}/>
 			<ArticlesButtons handlePage={handlePage} />
 		</div>
 	)
