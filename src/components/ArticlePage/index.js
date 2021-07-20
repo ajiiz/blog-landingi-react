@@ -18,14 +18,18 @@ const ArticlePage = () => {
 	const comments = useSelector((state) => state.comments)
 	const user = useSelector((state) => state.user)
 
-    useEffect(() => {
-        dispatch(getArticle(id))
-				dispatch(getComments(id))
-    }, [dispatch])
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 
-		useEffect(() => {
-			dispatch(getUser(article.userId))
-		}, [article])
+	useEffect(() => {
+			dispatch(getArticle(id))
+			dispatch(getComments(id))
+	}, [dispatch])
+
+	useEffect(() => {
+		dispatch(getUser(article.userId))
+	}, [article])
 
 	return (
 		<>
