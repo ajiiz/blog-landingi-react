@@ -18,6 +18,8 @@ const ArticleContent = ({ article, user }) => {
 						<span>{user.name}</span>
 						<span>{user.email}</span>
 					</p>
+					<button className={[styles["article__favourite--add"]]}>Add to favourites!</button>
+					{/* <button className={[styles["article__favourite--remove"]]}>Remove from favourites!</button> */}
 				</div>
 			</div>
 	)

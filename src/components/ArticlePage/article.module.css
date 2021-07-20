@@ -76,6 +76,39 @@
 	color:rgb(109, 109, 109);
 }
 
+.article__favourite--add {
+	color: rgb(0, 172, 0);
+	font-size: .9em;
+	margin-top: .5em;
+}
+
+.article__favourite--add:hover {
+	color:rgb(0, 218, 109);
+	font-size: .9em;
+}
+
+.article__favourite--add:focus {
+	color:rgb(0, 228, 159);
+	font-size: .9em;
+}
+
+.article__favourite--remove {
+	color: rgb(223, 0, 0);
+	font-size: .9em;
+	margin-top: .5em;
+}
+
+.article__favourite--remove:hover {
+	color:rgb(138, 0, 0);
+	font-size: .9em;
+}
+
+.article__favourite--remove:focus {
+	color:rgb(145, 41, 41);
+	font-size: .9em;
+}
+
+
 @media screen and (max-width: 1200px) {
 	.comment__container {
 		width: 80%;
