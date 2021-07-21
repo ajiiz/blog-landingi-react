@@ -7,7 +7,7 @@ export const fetchArticles = async (page) => {
         data = data.filter((elem) => elem.id > start && elem.id <= end)
         return data
     } catch (error) {
-        throw Error(`Couldnt fetch the posts! Error message:${error}`)
+        throw Error(`Couldnt fetch the articles! Error message:${error}`)
     }
 }
 
@@ -18,7 +18,7 @@ export const fetchArticle = async (articleId) => {
         let article = data.filter((elem) => elem.id == articleId)
         return article[0]
     } catch (error) {
-        throw Error(`Couldnt fetch the post! Error message:${error}`)
+        throw Error(`Couldnt fetch the article! Error message:${error}`)
     }
 }
 
@@ -64,7 +64,7 @@ export const fetchFavouriteIds = async () => {
         const favourites = localStorage.getItem("favourites").split(",")
         return favourites
     } catch (error) {
-        throw Error(`Couldnt add to favourites! Error message:${error}`)
+        throw Error(`Couldnt fetch favouritesIds! Error message:${error}`)
     }
 }
 
