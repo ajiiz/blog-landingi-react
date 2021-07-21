@@ -8,3 +8,12 @@ export const getComments = (articleId) => async (dispatch) => {
         console.log(error.message)
     }
 }
+
+export const addComment = (comment) => async (dispatch) => {
+    try {
+        const data = await api.addComment(comment)
+        dispatch({ type: "ADD", payload: data })
+    } catch (error) {
+        console.log(error.message)
+    }
+}
