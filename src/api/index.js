@@ -33,6 +33,18 @@ export const fetchComments = async (articleId) => {
     }
 }
 
+export const addComment = async(comment) => {
+    try {
+        // There I would send comment to backend and then return it
+        return {
+            body: comment.content,
+            email: comment.email,
+        }
+    } catch (error) {
+        throw Error(`Couldnt fetch the comments! Error message:${error}`)
+    }
+}
+
 export const fetchUser = async (userId) => {
     try {
         const response = await fetch("https://jsonplaceholder.typicode.com/users")
