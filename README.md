@@ -6,7 +6,7 @@
 * [Contact](#contact)
 
 ## Status
-#### Published live version at:[blog-landingi-pw](https://blog-landingi-pw.netlify.app/)
+#### Published live version at: [blog-landingi-pw](https://blog-landingi-pw.netlify.app/)
 
 ## Technologies
 * ReactJS
