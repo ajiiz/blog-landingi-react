@@ -26,7 +26,7 @@ a, a:hover, a:visited {
 	text-decoration: none;
 }
 
-button, button:focus, button:hover {
+button, button:focus, button:hover, input[type="submit"], input[type="reset"] {
 	background: none;
 	color: inherit;
 	border: none;
