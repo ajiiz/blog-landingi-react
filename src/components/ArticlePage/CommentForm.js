@@ -1,18 +1,42 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useDispatch } from "react-redux"
+import { addComment } from "../../actions/comments"
 
 import styles from "./article.module.css"
 
 const CommentForm = () => {
 
-	const [userComment, setUserComment] = useState({name: "", content: ""})
+	const dispatch = useDispatch()
+	const [userComment, setUserComment] = useState({email: "", content: ""})
+	const [errorMsg, setErrorMessage] = useState("")
+
+	useEffect(() => {
+		if (!checkError()) {
+			setErrorMessage("")
+		} else {
+			setErrorMessage("Minimalnie 5 znakow!")
+		}
+	}, [userComment])
 
 	const handleChange = (event) => {
 		const { name, value } = event.target
 		setUserComment({...userComment, [name]: value })
 	}
 
-	const handleSubmit = () => {
+	const handleSubmit = (event) => {
+		event.preventDefault()
+		if (!checkError()) {
+			dispatch(addComment(userComment))
+			setUserComment({email: "", content: ""})
+		}
+	}
 
+	const checkError = () => {
+		if (userComment.email.length >= 5 && userComment.content.length >= 5) {
+			return false
+		} else {
+			return true
+		}
 	}
 
 	return (
@@ -20,13 +44,13 @@ const CommentForm = () => {
 			<h3 className={styles.comment__header}>Add comment</h3>
 			<form className={styles.comment__form} onSubmit={handleSubmit}>
         <label>
-          <div className={styles.form__text}>Name</div>
+          <div className={styles.form__text}>Email</div>
           <input
 						className={styles.form__name}
 						type="text"
-						placeholder="your name"
-						name="name"
-						value={userComment.name}
+						placeholder="your email"
+						name="email"
+						value={userComment.email}
 						onChange={handleChange}
 					/>
         </label>
@@ -40,7 +64,12 @@ const CommentForm = () => {
 						onChange={handleChange}
 					/>
         </label>
+				{
+					errorMsg.length > 0 &&
+						<label><span className={styles.form__erorMsg}>{errorMsg}</span></label>
+				}
         <input type="submit" value="send" />
+
       </form>
 		</>
 	)

@@ -143,6 +143,10 @@
 	background-color: rgb(73, 73, 73);
 }
 
+.form__erorMsg {
+	font-size: .7em;
+}
+
 @media screen and (max-width: 1200px) {
 	.comment__container {
 		width: 80%;
