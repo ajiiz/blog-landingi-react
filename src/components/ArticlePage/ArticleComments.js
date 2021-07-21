@@ -1,6 +1,7 @@
 import React from 'react'
 
 import ArticleComment from "./ArticleComment"
+import CommentForm from "./CommentForm"
 import styles from "./article.module.css"
 
 const ArticleComments = ({ comments }) => {
@@ -14,6 +15,7 @@ const ArticleComments = ({ comments }) => {
 					)
 				})
 			}
+			<CommentForm />
 		</div>
 	)
 }

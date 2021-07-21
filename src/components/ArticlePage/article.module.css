@@ -108,6 +108,40 @@
 	font-size: .9em;
 }
 
+.comment__form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin: auto;
+}
+
+.comment__form input, .comment__form textarea {
+	margin-bottom: .8em;
+	padding: .5em;
+}
+
+.form__comment {
+	min-height: 5em;
+}
+
+.comment__form input[type="submit"] {
+	align-self: center;
+	border: 2px solid black;
+	margin-top: 1em;
+	padding: .5em 1em;
+	font-size: .9em;
+	transition: color .2s ease-in, background-color .2s ease-in;
+}
+
+.comment__form input[type="submit"]:hover {
+	color: whitesmoke;
+	background-color: black;
+}
+
+.comment__form input[type="submit"]:focus {
+	color: whitesmoke;
+	background-color: rgb(73, 73, 73);
+}
 
 @media screen and (max-width: 1200px) {
 	.comment__container {
@@ -119,6 +153,9 @@
 	.comment__container {
 		width: 90%;
 		margin: 4em auto;
+	}
+	.comment__form {
+		margin: 1.5em auto;
 	}
 }
 
