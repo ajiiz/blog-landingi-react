@@ -11,8 +11,8 @@ export const getComments = (articleId) => async (dispatch) => {
 
 export const addComment = (comment) => async (dispatch) => {
     try {
-        const data = await api.addComment(comment)
-        dispatch({ type: "ADD", payload: data })
+        const data = await api.sendComment(comment)
+        dispatch({ type: "ADD_COMMENT", payload: data })
     } catch (error) {
         console.log(error.message)
     }

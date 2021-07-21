@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 
 import ArrowLeft from "../../assets/arrow-left.svg"
 import ArrowRight from "../../assets/arrow-right.svg"

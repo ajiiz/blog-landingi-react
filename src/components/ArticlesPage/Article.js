@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react"
 
-import { NavLink } from 'react-router-dom'
+import { NavLink } from "react-router-dom"
 import styles from "./articles.module.css"
 
 const Article = ({ title, body, id }) => {

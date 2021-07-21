@@ -33,15 +33,18 @@ export const fetchComments = async (articleId) => {
     }
 }
 
-export const addComment = async(comment) => {
+export const sendComment = async(comment) => {
     try {
         // There I would send comment to backend and then return it
         return {
+            postid:0,
+            id: 0,
+            name: "",
             body: comment.content,
-            email: comment.email,
+            email: comment.email
         }
     } catch (error) {
-        throw Error(`Couldnt fetch the comments! Error message:${error}`)
+        throw Error(`Couldnt add the comment! Error message:${error}`)
     }
 }
 

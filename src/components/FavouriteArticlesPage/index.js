@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { getFavouriteArticles } from "../../actions/favourites"
 import { useSelector } from "react-redux"

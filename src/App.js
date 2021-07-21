@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react"
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom"
 
-import Navbar from './components/Navbar'
-import ArticlePage from './components/ArticlePage'
-import ArticlesPage from './components/ArticlesPage'
-import FavouriteArticlesPage from './components/FavouriteArticlesPage'
-import Footer from './components/Footer'
+import Navbar from "./components/Navbar"
+import ArticlePage from "./components/ArticlePage"
+import ArticlesPage from "./components/ArticlesPage"
+import FavouriteArticlesPage from "./components/FavouriteArticlesPage"
+import Footer from "./components/Footer"
 import "./index.module.css"
 
 const App = () => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { addComment } from "../../actions/comments"
 
@@ -14,7 +14,7 @@ const CommentForm = () => {
 		if (!checkError()) {
 			setErrorMessage("")
 		} else {
-			setErrorMessage("Minimalnie 5 znakow!")
+			setErrorMessage("At least 5 characters!")
 		}
 	}, [userComment])
 

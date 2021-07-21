@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { getArticle } from "../../actions/article"
 import { getComments } from "../../actions/comments"
 import { getUser } from "../../actions/user"
-import { getFavouritesIds, addFavourite, removeFavourite } from '../../actions/favourites'
+import { getFavouritesIds, addFavourite, removeFavourite } from "../../actions/favourites"
 import { useSelector } from "react-redux"
 
 import ArticleContent from "./ArticleContent"

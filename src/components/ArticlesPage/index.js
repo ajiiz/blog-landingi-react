@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { getArticles } from "../../actions/articles"
 import { useSelector } from "react-redux"
 
-import ArticlesShowcase from './ArticlesShowcase'
-import ArticlesMain from './ArticlesMain'
-import ArticlesButtons from './ArticlesButtons'
+import ArticlesShowcase from "./ArticlesShowcase"
+import ArticlesMain from "./ArticlesMain"
+import ArticlesButtons from "./ArticlesButtons"
 import styles from "./articles.module.css"
 
 const ArticlesPage = () => {
